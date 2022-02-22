@@ -105,19 +105,24 @@ public class UtilidadesPersonaje {
     }
 
 
+
     public Personaje getMasPoderoso(List<Personaje> personajes){
-        double poder = 0.0;
+
         Personaje mas_poderoso = null;
         for (Personaje personaje: personajes){
            levelTo18(personaje);
+           if (mas_poderoso == null){
+               mas_poderoso = personaje;
+           }
             if (personaje.getNivel() == 18){
-                poder = personaje.getAtaque() + personaje.getDefensa() + personaje.getMana() + personaje.getVida();
-                if(poder > )
-
-
-
+                double poder = personaje.getAtaque() + personaje.getDefensa() + personaje.getMana() + personaje.getVida();
+                double poder_mp = (mas_poderoso.getAtaque() + mas_poderoso.getDefensa() + mas_poderoso.getMana() + mas_poderoso.getVida());
+                if(poder > poder_mp){
+                    mas_poderoso = personaje;
+                }
            }
        }
+        return mas_poderoso;
     }
 
 }
