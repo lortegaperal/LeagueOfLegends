@@ -84,7 +84,40 @@ public class UtilidadesPersonaje {
         return mapa_personaje;
     }
 
+    public Personaje levelTo0(Personaje personaje){
+
+        personaje.setAtaque(0.0);
+        personaje.setDefensa(0.0);
+        personaje.setVida(0.0);
+        personaje.setMana(0.0);
+        personaje.setNivel(0);
+
+        return personaje;
+    }
+
+    public Personaje levelTo18 (Personaje personaje){
+
+        levelTo0(personaje);
+        while (personaje.getNivel() == 18) {
+            levelUp(personaje);
+        }
+        return personaje;
+    }
 
 
+    public Personaje getMasPoderoso(List<Personaje> personajes){
+        double poder = 0.0;
+        Personaje mas_poderoso = null;
+        for (Personaje personaje: personajes){
+           levelTo18(personaje);
+            if (personaje.getNivel() == 18){
+                poder = personaje.getAtaque() + personaje.getDefensa() + personaje.getMana() + personaje.getVida();
+                if(poder > )
+
+
+
+           }
+       }
+    }
 
 }
