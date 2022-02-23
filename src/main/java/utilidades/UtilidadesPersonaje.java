@@ -108,29 +108,42 @@ public class UtilidadesPersonaje {
         return personaje;
     }
 
-    //MÉTODO QUE DEVUELVE EL PERSONAJE MAS PODEROSO
+
 
     public Personaje getMasPoderoso(List<Personaje> personajes){
 
         Personaje mas_poderoso = null;
         for (Personaje personaje: personajes){
-            //SE SUBE AL NIVEL 18 CADA PERSONAJE PARA COMPARARLOS ENTRE SÍ
+
            levelTo18(personaje);
 
            if (mas_poderoso == null){
                mas_poderoso = personaje;
            }
             if (personaje.getNivel() == 18){
-                //SE SUMA LAS ESTADISTICAS DEL PERSONAJE Y SE COMPARA CON CADA UNO
+
                 double poder = personaje.getAtaque() + personaje.getDefensa() + personaje.getMana() + personaje.getVida();
                 double poder_mp = (mas_poderoso.getAtaque() + mas_poderoso.getDefensa() + mas_poderoso.getMana() + mas_poderoso.getVida());
                 if(poder > poder_mp){
-                    //EL PERSONAJE MÁS PODEROSO EL EL MAYOR DE LA LISTA DE PERSONAJES
+
                     mas_poderoso = personaje;
                 }
            }
        }
         return mas_poderoso;
+    }
+
+    //COMPROBAR
+    public Map<Region, List<Personaje>> getMasPoderosoPorRegion(List<Personaje> personajes){
+        Map<Region, List<Personaje>> mapa_region = new HashMap<>();
+
+        for (Personaje personaje: personajes){
+
+            mapa_region.get(getPersonajesPorRegion(personajes)).add(personaje);
+            mapa_region.get(getMasPoderoso(personajes)).add(personaje);
+
+        }
+        return mapa_region;
     }
 
 }
