@@ -84,6 +84,8 @@ public class UtilidadesPersonaje {
         return mapa_personaje;
     }
 
+    //MÉTODO PARA PONER EL NIVEL Y LAS ESTADÍSTICAS DEL PERSONAJE A 0
+
     public Personaje levelTo0(Personaje personaje){
 
         personaje.setAtaque(0.0);
@@ -95,6 +97,8 @@ public class UtilidadesPersonaje {
         return personaje;
     }
 
+    //MÉTODO PARA PONER EL NIVEL Y LAS ESTADÍSTICAS DEL PERSONAJE DE 0 A 18
+
     public Personaje levelTo18 (Personaje personaje){
 
         levelTo0(personaje);
@@ -104,20 +108,24 @@ public class UtilidadesPersonaje {
         return personaje;
     }
 
-
+    //MÉTODO QUE DEVUELVE EL PERSONAJE MAS PODEROSO
 
     public Personaje getMasPoderoso(List<Personaje> personajes){
 
         Personaje mas_poderoso = null;
         for (Personaje personaje: personajes){
+            //SE SUBE AL NIVEL 18 CADA PERSONAJE PARA COMPARARLOS ENTRE SÍ
            levelTo18(personaje);
+
            if (mas_poderoso == null){
                mas_poderoso = personaje;
            }
             if (personaje.getNivel() == 18){
+                //SE SUMA LAS ESTADISTICAS DEL PERSONAJE Y SE COMPARA CON CADA UNO
                 double poder = personaje.getAtaque() + personaje.getDefensa() + personaje.getMana() + personaje.getVida();
                 double poder_mp = (mas_poderoso.getAtaque() + mas_poderoso.getDefensa() + mas_poderoso.getMana() + mas_poderoso.getVida());
                 if(poder > poder_mp){
+                    //EL PERSONAJE MÁS PODEROSO EL EL MAYOR DE LA LISTA DE PERSONAJES
                     mas_poderoso = personaje;
                 }
            }
