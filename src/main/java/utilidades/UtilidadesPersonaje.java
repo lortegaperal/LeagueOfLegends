@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class UtilidadesPersonaje {
 
-    public Personaje levelUp(Personaje personaje) {
+    public static Personaje levelUp(Personaje personaje) {
 
         Integer subida_nivel = personaje.getNivel() + 1;
 
@@ -25,6 +25,7 @@ public class UtilidadesPersonaje {
         personaje.setDefensa(defensa);
         personaje.setVida(vida);
         personaje.setMana(mana);
+        personaje.setNivel(subida_nivel);
 
         return personaje;
     }
@@ -86,7 +87,7 @@ public class UtilidadesPersonaje {
 
     //MÉTODO PARA PONER EL NIVEL Y LAS ESTADÍSTICAS DEL PERSONAJE A 0
 
-    public Personaje levelTo0(Personaje personaje) {
+    public static Personaje levelTo0(Personaje personaje) {
 
         personaje.setAtaque(0.0);
         personaje.setDefensa(0.0);
@@ -135,12 +136,9 @@ public class UtilidadesPersonaje {
     public Map<Region, Personaje> getMasPoderosoPorRegion(List<Personaje> personajes) {
         Map<Region, List<Personaje>> mapa_region = getPersonajesPorRegion(personajes);
         Map<Region, Personaje> mapaObjetivo = new HashMap<>();
-        Personaje poderoso_region = null;
 
         for (Region region : mapa_region.keySet()) {
-                poderoso_region = getMasPoderoso(mapa_region.get(region));
-                mapaObjetivo.put(region, poderoso_region);
-
+                mapaObjetivo.put(region, getMasPoderoso(mapa_region.get(region)));
         }
         return mapaObjetivo;
     }

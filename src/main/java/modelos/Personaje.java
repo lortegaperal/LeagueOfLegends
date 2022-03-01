@@ -43,6 +43,10 @@ public class Personaje {
         this.escalabilidad = escalabilidad;
     }
 
+    public Personaje() {
+
+    }
+
     public int getId() {
         return id;
     }
