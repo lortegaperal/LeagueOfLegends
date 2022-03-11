@@ -19,7 +19,7 @@ public class Personaje {
     private Double vida;
     private Double mana;
     private Region region;
-    private List<Habilidad> habildades;
+    private List<Habilidad> habilidades;
     private List<Item> equipamiento;
     private Escalabilidad escalabilidad;
 
@@ -38,7 +38,7 @@ public class Personaje {
         this.vida = vida;
         this.mana = mana;
         this.region = region;
-        this.habildades = habildades;
+        this.habilidades = habildades;
         this.equipamiento = equipamiento;
         this.escalabilidad = escalabilidad;
     }
@@ -160,11 +160,11 @@ public class Personaje {
     }
 
     public List<Habilidad> getHabildades() {
-        return habildades;
+        return habilidades;
     }
 
     public void setHabildades(List<Habilidad> habildades) {
-        this.habildades = habildades;
+        this.habilidades = habildades;
     }
 
     public List<Item> getEquipamiento() {
@@ -188,12 +188,12 @@ public class Personaje {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Personaje personaje = (Personaje) o;
-        return id == personaje.id && Objects.equals(nombre, personaje.nombre) && Objects.equals(descripcion, personaje.descripcion) && Objects.equals(fechaCreacion, personaje.fechaCreacion) && Objects.equals(nivel, personaje.nivel) && Objects.equals(vidaBase, personaje.vidaBase) && Objects.equals(manaBase, personaje.manaBase) && Objects.equals(defensaBase, personaje.defensaBase) && Objects.equals(defensa, personaje.defensa) && Objects.equals(ataqueBase, personaje.ataqueBase) && Objects.equals(ataque, personaje.ataque) && Objects.equals(vida, personaje.vida) && Objects.equals(mana, personaje.mana) && region == personaje.region && Objects.equals(habildades, personaje.habildades) && Objects.equals(equipamiento, personaje.equipamiento) && Objects.equals(escalabilidad, personaje.escalabilidad);
+        return id == personaje.id && Objects.equals(nombre, personaje.nombre) && Objects.equals(descripcion, personaje.descripcion) && Objects.equals(fechaCreacion, personaje.fechaCreacion) && Objects.equals(nivel, personaje.nivel) && Objects.equals(vidaBase, personaje.vidaBase) && Objects.equals(manaBase, personaje.manaBase) && Objects.equals(defensaBase, personaje.defensaBase) && Objects.equals(defensa, personaje.defensa) && Objects.equals(ataqueBase, personaje.ataqueBase) && Objects.equals(ataque, personaje.ataque) && Objects.equals(vida, personaje.vida) && Objects.equals(mana, personaje.mana) && region == personaje.region && Objects.equals(habilidades, personaje.habilidades) && Objects.equals(equipamiento, personaje.equipamiento) && Objects.equals(escalabilidad, personaje.escalabilidad);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, descripcion, fechaCreacion, nivel, vidaBase, manaBase, defensaBase, defensa, ataqueBase, ataque, vida, mana, region, habildades, equipamiento, escalabilidad);
+        return Objects.hash(id, nombre, descripcion, fechaCreacion, nivel, vidaBase, manaBase, defensaBase, defensa, ataqueBase, ataque, vida, mana, region, habilidades, equipamiento, escalabilidad);
     }
 
     @Override
@@ -213,7 +213,7 @@ public class Personaje {
                 ", vida=" + vida +
                 ", mana=" + mana +
                 ", region=" + region +
-                ", habildades=" + habildades +
+                ", habildades=" + habilidades +
                 ", equipamiento=" + equipamiento +
                 ", escalabilidad=" + escalabilidad +
                 '}';

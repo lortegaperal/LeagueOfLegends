@@ -10,7 +10,7 @@ public class Item {
     private Double aumentoSalud;
     private Double aumentoMana;
 
-    public Item(int id, String nombre, Double aumentoDano, Double aumentoDefensa, Double aumentoSalud, Double aumentoMana) {
+    public Item() {
         this.id = id;
         this.nombre = nombre;
         this.aumentoDano = aumentoDano;
@@ -18,6 +18,7 @@ public class Item {
         this.aumentoSalud = aumentoSalud;
         this.aumentoMana = aumentoMana;
     }
+
 
     public int getId() {
         return id;

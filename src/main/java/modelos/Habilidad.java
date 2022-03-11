@@ -19,6 +19,10 @@ public class Habilidad {
         this.tipoHabilidad = tipoHabilidad;
     }
 
+    public Habilidad() {
+
+    }
+
     public int getId() {
         return id;
     }
