@@ -31,7 +31,7 @@ public class UtilidadesFichero {
 
         try {
             reader_personaje = new CSVReader(new FileReader("C:\\Users\\orteg\\IdeaProjects\\LeagueOfLegends\\src\\documentos\\personajes.csv"),SEPARATOR,QUOTE);
-            String[] siguienteLinea= null ;
+            String[] siguienteLinea = null ;
             int contador = 0;
 
             while ((siguienteLinea = reader_personaje.readNext()) != null) {

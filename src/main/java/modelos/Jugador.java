@@ -8,13 +8,13 @@ public class Jugador {
 
     private int id;
     private String nickname;
-    private Set<Personaje> personajesFavoritos;
+    private Set<Personaje> personajeFavorito;
     private Map<Personaje,Integer> partidasGanadas;
 
-    public Jugador(int id, String nickname, Set<Personaje> personajesFavoritos, Map<Personaje, Integer> partidasGanadas) {
+    public Jugador(int id, String nickname, Set<Personaje> personajeFavorito, Map<Personaje, Integer> partidasGanadas) {
         this.id = id;
         this.nickname = nickname;
-        this.personajesFavoritos = personajesFavoritos;
+        this.personajeFavorito = personajeFavorito;
         this.partidasGanadas = partidasGanadas;
     }
 
@@ -34,12 +34,12 @@ public class Jugador {
         this.nickname = nickname;
     }
 
-    public Set<Personaje> getPersonajesFavoritos() {
-        return personajesFavoritos;
+    public Set<Personaje> getPersonajeFavorito() {
+        return personajeFavorito;
     }
 
-    public void setPersonajesFavoritos(Set<Personaje> personajesFavoritos) {
-        this.personajesFavoritos = personajesFavoritos;
+    public void setPersonajeFavorito(Set<Personaje> personajeFavorito) {
+        this.personajeFavorito = personajeFavorito;
     }
 
     public Map<Personaje, Integer> getPartidasGanadas() {
@@ -55,12 +55,12 @@ public class Jugador {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Jugador jugador = (Jugador) o;
-        return id == jugador.id && Objects.equals(nickname, jugador.nickname) && Objects.equals(personajesFavoritos, jugador.personajesFavoritos) && Objects.equals(partidasGanadas, jugador.partidasGanadas);
+        return id == jugador.id && Objects.equals(nickname, jugador.nickname) && Objects.equals(personajeFavorito, jugador.personajeFavorito) && Objects.equals(partidasGanadas, jugador.partidasGanadas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nickname, personajesFavoritos, partidasGanadas);
+        return Objects.hash(id, nickname, personajeFavorito, partidasGanadas);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Jugador {
         return "Jugador{" +
                 "id=" + id +
                 ", nickname='" + nickname + '\'' +
-                ", personajesFavoritos=" + personajesFavoritos +
+                ", personajeFavorito=" + personajeFavorito +
                 ", partidasGanadas=" + partidasGanadas +
                 '}';
     }
