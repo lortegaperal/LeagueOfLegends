@@ -10,6 +10,15 @@ public class Item {
     private Double aumentoSalud;
     private Double aumentoMana;
 
+    public Item(int id, String nombre, Double aumentoDano, Double aumentoDefensa, Double aumentoSalud, Double aumentoMana) {
+        this.id = id;
+        this.nombre = nombre;
+        this.aumentoDano = aumentoDano;
+        this.aumentoDefensa = aumentoDefensa;
+        this.aumentoSalud = aumentoSalud;
+        this.aumentoMana = aumentoMana;
+    }
+
     public Item() {
         this.id = id;
         this.nombre = nombre;

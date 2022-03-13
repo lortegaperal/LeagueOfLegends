@@ -75,7 +75,6 @@ public class UtilidadesFichero {
 
             reader_habilidades = new CSVReader(new FileReader("C:\\Users\\orteg\\IdeaProjects\\LeagueOfLegends\\src\\documentos\\habilidades.csv"), SEPARATOR, QUOTE);
             reader_personaje = new CSVReader(new FileReader("C:\\Users\\orteg\\IdeaProjects\\LeagueOfLegends\\src\\documentos\\personajes.csv"),SEPARATOR,QUOTE);
-            reader_item = new CSVReader(new FileReader("C:\\Users\\orteg\\IdeaProjects\\LeagueOfLegends\\src\\documentos\\item.csv"),SEPARATOR,QUOTE);
 
             String[] siguienteLinea = null;
             int contador = 0;
@@ -84,6 +83,7 @@ public class UtilidadesFichero {
             while ((siguienteLinea = reader_habilidades.readNext()) != null) {
 
                 if(contador > 0) {
+
                     String[] valores = siguienteLinea;
                     Habilidad h = new Habilidad();
                     h.setId(Integer.parseInt(valores[0]));

@@ -100,7 +100,7 @@ public class UtilidadesPersonaje {
 
     //MÉTODO PARA PONER EL NIVEL Y LAS ESTADÍSTICAS DEL PERSONAJE DE 0 A 18
 
-    public Personaje levelTo18(Personaje personaje) {
+    public static Personaje levelTo18(Personaje personaje) {
 
         levelTo0(personaje);
         while (personaje.getNivel() == 18) {
